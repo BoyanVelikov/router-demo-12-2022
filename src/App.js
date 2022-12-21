@@ -1,15 +1,16 @@
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import './App.css';
 
 function App() {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const subscribe = () => {
     
     // some log, maybe call apis
 
-    history.push('/channel');
-  }
+    navigate('/channel');
+  };
   
   return (
     <div className="App">
@@ -18,7 +19,12 @@ function App() {
         <Link to="/about">About</Link>
       </nav>
 
-      <div className='content'>React Router</div>
+      <button onClick={subscribe}>Subscribe</button>
+
+      <div className='content'>
+        <Route path="/">Home Page</Route>
+        <Route path="/about">About Page</Route>
+      </div>
     </div>
   );
 }
