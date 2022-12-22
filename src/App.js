@@ -1,4 +1,5 @@
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import {Route, Switch} from 'react-router';
 import { useNavigate } from "react-router-dom";
 import './App.css';
 
@@ -22,8 +23,14 @@ function App() {
       <button onClick={subscribe}>Subscribe</button>
 
       <div className='content'>
-        <Route path="/">Home Page</Route>
+        <Switch>
+        <Route exact path="/">
+          Home Page
+          </Route>
         <Route path="/about">About Page</Route>
+        <Route path='*'>404 Not Found</Route>
+        </Switch>
+        
       </div>
     </div>
   );
