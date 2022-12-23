@@ -18,6 +18,7 @@ function App() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
+        <Link to="/contacts">Contacts</Link>
       </nav>
 
       <button onClick={subscribe}>Subscribe</button>
